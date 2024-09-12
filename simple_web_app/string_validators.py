@@ -57,9 +57,9 @@ class EspecialCharacterValidator(Validator):
         self.especial_set = set(punctuation)
 
     def validate(self, content):
-        caracteres_set = set('/', '~', '^')
+        caracteres_set = set("/", "~", "^")
         if self.especial_set.isdijoint(caracteres_set):
-            msg = 'Passwords can not have /, ^ or ^'
+            msg = "Passwords can not have /, ^ or ^"
             raise EspecialCharacterException(detail=msg)
         content_set = set(content)
         if self.especial_set.isdisjoint(content_set):
