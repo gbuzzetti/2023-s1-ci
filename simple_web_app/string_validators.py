@@ -58,15 +58,15 @@ class EspecialCharacterValidator(Validator):
 
     def validate(self, content):
         caracter_set = "/"
-        if self.especial_set.isdijoint(set(caracter_set)):
+        if self.especial_set.isdisjoint(set(caracter_set)):
             msg = "Passwords can not have /"
             raise EspecialCharacterException(detail=msg)
         caracter_set = "^"
-        if self.especial_set.isdijoint(set(caracter_set)):
+        if self.especial_set.isdisjoint(set(caracter_set)):
             msg = "Passwords can not have ^"
             raise EspecialCharacterException(detail=msg)
         caracter_set = "~"
-        if self.especial_set.isdijoint(set(caracter_set)):
+        if self.especial_set.isdisjoint(set(caracter_set)):
             msg = "Passwords can not have ~"
             raise EspecialCharacterException(detail=msg)
         content_set = set(content)
