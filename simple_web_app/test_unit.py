@@ -60,12 +60,14 @@ def test_8_chars_with_no_especial_character_password_should_raise_exception():
         # when
         validator.password_validate()
 
+
 def test_8_chars_with_especial_character_slash_password_should_raise_exception():
     # given
     validator = PasswordValidator(content="1e/B1eAB")
     with pytest.raises(Exception):  # then
         # when
         validator.password_validate()
+
 
 def test_8_chars_with_especial_character_tilde_password_should_raise_exception():
     # given
@@ -74,12 +76,14 @@ def test_8_chars_with_especial_character_tilde_password_should_raise_exception()
         # when
         validator.password_validate()
 
+
 def test_8_chars_with_especial_character_caret_password_should_raise_exception():
     # given
     validator = PasswordValidator(content="1e^aAeAB")
     with pytest.raises(Exception):  # then
         # when
         validator.password_validate()
+        
 
 def test_8_chars_with_no_upper_case_password_should_raise_exception():
     # given
