@@ -57,15 +57,15 @@ class EspecialCharacterValidator(Validator):
         self.especial_set = set(punctuation)
 
     def validate(self, content):
-        caracter_set = set("/")
+        caracter_set = "/"
         if self.especial_set.isdijoint(caracter_set):
             msg = "Passwords can not have /"
             raise EspecialCharacterException(detail=msg)
-        caracter_set = set("^")
+        caracter_set = "^"
         if self.especial_set.isdijoint(caracter_set):
             msg = "Passwords can not have ^"
             raise EspecialCharacterException(detail=msg)
-        caracter_set = set("~")
+        caracter_set = "~"
         if self.especial_set.isdijoint(caracter_set):
             msg = "Passwords can not have ~"
             raise EspecialCharacterException(detail=msg)
